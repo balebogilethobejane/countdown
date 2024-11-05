@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FriendMas Count Down</title>
+    <style>
+    ::before 
+    ::after{
+margin: 0; 
+padding: 0; 
+box-sizing: border-box;
+
+    }
+
+body{
+font-family: 'Roboto', sans-serif; 
+height: 100vh;
+ display: flex; 
+ align-items: center; 
+ justify-content: center;
+background: url("https://th.bing.com/th/id/R.8d8adb1dcd459095b555eb357814682b?rik=kLHgyUCnanxzZQ&riu=http%3a%2f%2fhdwpro.com%2fwp-content%2fuploads%2f2016%2f01%2fColorful-Balls-Christmas-Background.jpeg&ehk=O41HJ%2f6A6V2Y3Y%2b1SVwr7DKYNDkdNocfEo6UCLdYYSI%3d&risl=&pid=ImgRaw&r=0")no-repeat;
+background-position: center; background-size: cover;
+}
+
+h1 {
+text-align: center;
+color: rgb(136, 55, 116)
+font-size: 40px; 
+margin-bottom: 30px; 
+text-transform: uppercase;|
+}
+
+.container {
+    display: flex;
+}
+    
+    
+.counter-container {
+    width: 100px;
+     height: 100px; 
+     display: flex;
+flex-direction: column;
+ justify-content: center;
+  text-align: center;
+  background: transparent;
+  border: 2px solid #242321;
+  border-radius: 10px;
+  backdrop-filter: blur(15px);
+  color: #3d3d38;
+  margin: o 5px;
+  text-transform: uppercase;
+}
+.counter {
+    display: block;
+font-size: 35px;
+font-weight:
+}   
+    </style>
+    
+</head>
+<body>
+<main>
+<h1>FriendMas Coming Soon</h1>
+<div class="container">
+    <div class="counter-container">
+    <span id="days" class="counter">0 </span>
+    <span>Days</span>
+        </div>
+        <div class="counter-container">
+        <span id="hours" class="counter">0</span>
+            <span>Hours</span>
+            </div>
+            <div class="counter-container">
+            
+                <span id="minutes" class="counter">0</span>
+            
+                <span>Minutes</span>
+            
+            </div>
+             <div class ="counter-container">
+            <span id="seconds" class="counter">0</span>
+            
+            <span>Seconds</span>
+        </div>
+    </main>
+    <script>
+        const countDownDate= new Date("Dec 7,2024 00:00:00").getTime();
+
+        clearInterval= setInterval (() => {
+            const now = new Date().getTime();
+            const duration = countDownDate - now;
+
+            if (duration < 0) {
+               clearInterval(interval);
+               updateDuration(0) ;
+               return;
+
+            }
+            updateDuration(duration);
+           } ,1000);
+
+
+           function updateDuration(duration) {
+
+               const days = Math.floor(duration/ (1000 * 60 * 60 * 24));
+               const hours = Math.floor((duration % (1000 * 60 * 60 * 24))/ (1000 * 60 * 60 ));
+               const minutes = Math.floor((duration % (1000 * 60 * 60 )) / (1000 * 60 ));
+               const seconds = Math.floor((duration % (1000 * 60 )) / 1000 * );
+ 
+               document.getELementById("days").innerHTML = days;
+               document.getELementById("hours").innerHTML = hours;
+               document.getELementById("minutes").innerHTML = minutes;|
+           }
+    </script>
+</body>
+</html>
