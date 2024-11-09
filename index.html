@@ -25,7 +25,11 @@
 
         h1 {
             text-align: center;
+<<<<<<< HEAD
             color: rgb(5, 5, 5);
+=======
+            color: rgb(136, 55, 116);
+>>>>>>> 9e2c13d79edb3206108a14ae7bedaf170be4c006
             font-size: 40px;
             margin-bottom: 30px;
             text-transform: uppercase;
@@ -60,6 +64,7 @@
 </head>
 
 <body>
+<<<<<<< HEAD
     <main>
         <h1>FriendMas Coming Soon</h1>
         <div class="container">
@@ -111,6 +116,59 @@
             document.getElementById("seconds").innerHTML = seconds;
         }
     </script>
+=======
+<main>
+    <h1>FriendMas Coming Soon</h1>
+    <div class="container">
+        <div class="counter-container">
+            <span id="days" class="counter">0</span>
+            <span>Days</span>
+        </div>
+        <div class="counter-container">
+            <span id="hours" class="counter">0</span>
+            <span>Hours</span>
+        </div>
+        <div class="counter-container">
+            <span id="minutes" class="counter">0</span>
+            <span>Minutes</span>
+        </div>
+        <div class="counter-container">
+            <span id="seconds" class="counter">0</span>
+            <span>Seconds</span>
+        </div>
+    </div>
+</main>
+<script>
+    const countDownDate = new Date("Dec 7, 2024 00:00:00").getTime();
+
+    const interval = setInterval(() => {
+        const now = new Date().getTime();
+        const duration = countDownDate - now;
+
+        if (duration < 0) {
+            clearInterval(interval);
+            document.getElementById("days").innerHTML = 0;
+            document.getElementById("hours").innerHTML = 0;
+            document.getElementById("minutes").innerHTML = 0;
+            document.getElementById("seconds").innerHTML = 0;
+            return;
+        }
+        updateDuration(duration);
+    }, 1000);
+
+    function updateDuration(duration) {
+        const days = Math.floor(duration / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((duration % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((duration % (1000 * 60)) / 1000);
+
+        document.getElementById("days").innerHTML = days;
+        document.getElementById("hours").innerHTML = hours;
+        document.getElementById("minutes").innerHTML = minutes;
+        document.getElementById("seconds").innerHTML = seconds;
+    }
+</script>
+>>>>>>> 9e2c13d79edb3206108a14ae7bedaf170be4c006
 </body>
 
 </html>
